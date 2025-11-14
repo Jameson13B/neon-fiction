@@ -5,7 +5,6 @@ import {
   Card,
   CardContent,
   CardDescription,
-  CardFooter,
   CardHeader,
   CardTitle,
 } from "@/components/ui/card"
@@ -45,9 +44,6 @@ export const About = () => {
             </p>
           </CardDescription>
         </CardContent>
-        <CardFooter>
-          <Button>Click me</Button>
-        </CardFooter>
       </Card>
       <Card size="lg">
         <CardHeader>
@@ -60,7 +56,15 @@ export const About = () => {
               focused on crafting bold, responsive, and intuitive user
               interfaces. Enjoys playing games with friends and family, cooking,
               traveling, and making experimental pico-brews.
-              <Button>
+              <Button
+                onClick={() =>
+                  window.open(
+                    "https://jamesonb.com",
+                    "_blank",
+                    "noopener noreferrer"
+                  )
+                }
+              >
                 Jameson's Site <ExternalLinkIcon />
               </Button>
             </p>
@@ -82,11 +86,18 @@ export const About = () => {
               src="https://placehold.co/300x200?text=Chris+Pic"
             />
             <p className="w-1/2 flex flex-col items-center gap-4 justify-center">
-              Chris is a UI/UX designer and developer with 6+ years of years of
-              experience, focused on crafting bold, responsive, and intuitive
-              user interfaces. Enjoys playing games with friends and family,
-              cooking, traveling, and making experimental pico-brews.
-              <Button>
+              Chris is a UI/UX designer and developer.
+              <br />
+              <em>Chris' bio coming soon.</em>
+              <Button
+                onClick={() =>
+                  window.open(
+                    "https://barelyfiction.design",
+                    "_blank",
+                    "noopener noreferrer"
+                  )
+                }
+              >
                 Chris's Site <ExternalLinkIcon />
               </Button>
             </p>
