@@ -1,0 +1,22 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 48px;
+  padding-bottom: 16px;
+}
+
+.logo {
+  max-width: 250px;
+  transform: scale(1.1);
+}
+
+.horizontalLine {
+  background: #ffffff;
+  border: 1.5px solid #ffffff;
+  margin: 4px auto 0;
+  height: 0;
+  width: 100%;
+  box-shadow: 0px 0px 3px 0px #27a8fdfc, 0px 0px 6px 0px #27a8fde5,
+    0px 0px 8px 0px #27a8fda6, 0px 0px 9px 0px #27a8fd40,
+    0px 0px 10px 0px #27a8fd26;
+}
