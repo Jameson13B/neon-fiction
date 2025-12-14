@@ -1,9 +1,9 @@
 import styles from "./pod.module.css"
-import penguinParadiseIcon from "../assets/penguin.svg"
-import vaultIcon from "../assets/vault.svg"
-import starstruckIcon from "../assets/alien.png"
-import bictoryIcon from "../assets/bictory.svg"
-import neonAirwaysIcon from "../assets/airways.svg"
+import PenguinIcon from "../assets/penguin.svg?react"
+import VaultIcon from "../assets/vault.svg?react"
+import StarstruckIcon from "../assets/alien.png"
+import BictoryIcon from "../assets/bictory.svg?react"
+import NeonAirwaysIcon from "../assets/airways.svg?react"
 
 export const Pod = ({
   title,
@@ -14,17 +14,18 @@ export const Pod = ({
   timeNeeded,
   onClick,
 }) => {
-  const iconSrc = {
-    "Penguin Paradise": penguinParadiseIcon,
-    Vault: vaultIcon,
-    Starstruck: starstruckIcon,
-    "Bictory!": bictoryIcon,
-    "Neon Airways": neonAirwaysIcon,
+  const Icon = {
+    "Penguin Paradise": PenguinIcon,
+    Vault: VaultIcon,
+    Starstruck: () => <img src={StarstruckIcon} alt="Starstruck" />,
+    "Bictory!": BictoryIcon,
+    "Neon Airways": NeonAirwaysIcon,
   }
+  const IconComponent = Icon[title]
   return (
     <div className={styles.pod} style={{ borderColor: color, color }}>
       <div className={styles.hero} style={{ borderColor: color }}>
-        <img src={iconSrc[title]} alt={title} />
+        <IconComponent />
       </div>
 
       <h3 className={styles.title} style={{ borderColor: color }}>
