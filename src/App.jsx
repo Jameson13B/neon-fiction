@@ -38,7 +38,8 @@ const toastStyles = {
 const pods = [
   {
     title: "Penguin Paradise",
-    description: "Description of Penguin Paradise goes here.",
+    description:
+      "Penguin-fueled chaos on ice! Race to the finish line in this fast-paced party game. Set in the icy wonderland of Penguin Paradise, players must bet wisely, avoid going too fast, and be the first to the end. Grab you winter coat and get ready to race!",
     color: "#863bff",
     devicesNeeded: "1 master",
     playersNeeded: "2+",
@@ -60,7 +61,8 @@ const pods = [
   },
   {
     title: "Vault",
-    description: "Description of Vault goes here.",
+    description:
+      "A high-stakes dice game of risk and reward! Roll the dice to build your pot, but beware of rolling a 7! Bank your points to keep them safe in the Vault, or push your luck to maximize your score. Will you play it safe or risk it all?",
     color: "#CED314",
     devicesNeeded: "1 master",
     playersNeeded: "2+",
@@ -69,7 +71,8 @@ const pods = [
   },
   {
     title: "Starstruck",
-    description: "Description of Starstruck goes here.",
+    description:
+      "A social strategy game of cosmic survival! Stranded in deep space, you must navigate alliances, betrayals, and unpredictable events. Will you work with your crew or blindside them to be the last one standing? Trust no one in the void—only the strongest strategist survives.",
     color: "#00E932",
     devicesNeeded: "1 master + 8 devices",
     playersNeeded: "8",
