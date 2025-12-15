@@ -53,7 +53,7 @@ const pods = [
     devicesNeeded: "1 master",
     playersNeeded: "2+",
     timeNeeded: "10-20 min",
-    onClick: () => window.open("https://vault.jamesonb.com/", "_blank"),
+    onClick: () => window.open("https://vault.neonfiction.games/", "_blank"),
     buttonText: "Play",
   },
   {
