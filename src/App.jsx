@@ -4,10 +4,19 @@ import { Footer } from "./components/Footer"
 import { Pod } from "./components/Pod"
 import logo from "./assets/logo.png"
 import styles from "./app.module.css"
-import penguinParadiseIcon from "./assets/penguin.svg"
-import starstruckIcon from "./assets/alien.png"
-import bictoryIcon from "./assets/bictory.svg"
-import neonAirwaysIcon from "./assets/airways.svg"
+import PenguinIcon from "./assets/penguin.svg?react"
+import VaultIcon from "./assets/vault.svg?react"
+import StarstruckIcon from "./assets/alien.png"
+import BictoryIcon from "./assets/bictory.svg?react"
+import NeonAirwaysIcon from "./assets/airways.svg?react"
+
+const Icon = {
+  "Penguin Paradise": PenguinIcon,
+  Vault: VaultIcon,
+  Starstruck: () => <img src={StarstruckIcon} alt="Starstruck" />,
+  "Bictory!": BictoryIcon,
+  "Neon Airways": NeonAirwaysIcon,
+}
 
 function App() {
   return (
@@ -18,7 +27,7 @@ function App() {
       </div>
 
       {pods.map((pod) => (
-        <Pod key={pod.title} {...pod} />
+        <Pod key={pod.title} {...pod} Icon={Icon[pod.title]} />
       ))}
 
       <Footer />
@@ -37,6 +46,17 @@ const toastStyles = {
 
 const pods = [
   {
+    title: "Vault",
+    description:
+      "A high-stakes dice game of risk and reward! Roll the dice to build your pot, but beware of rolling a 7! Bank your points to keep them safe in the Vault, or push your luck to maximize your score. Will you play it safe or risk it all?",
+    color: "#CED314",
+    devicesNeeded: "1 master",
+    playersNeeded: "2+",
+    timeNeeded: "10-20 min",
+    onClick: () => window.open("https://vault.jamesonb.com/", "_blank"),
+    buttonText: "Play",
+  },
+  {
     title: "Penguin Paradise",
     description:
       "Penguin-fueled chaos on ice! Race to the finish line in this fast-paced party game. Set in the icy wonderland of Penguin Paradise, players must bet wisely, avoid going too fast, and be the first to the end. Grab you winter coat and get ready to race!",
@@ -53,28 +73,19 @@ const pods = [
           </div>
         ),
         {
-          icon: <img src={penguinParadiseIcon} alt="Penguin Paradise" />,
+          icon: <PenguinIcon />,
           style: toastStyles,
         }
       )
     },
-  },
-  {
-    title: "Vault",
-    description:
-      "A high-stakes dice game of risk and reward! Roll the dice to build your pot, but beware of rolling a 7! Bank your points to keep them safe in the Vault, or push your luck to maximize your score. Will you play it safe or risk it all?",
-    color: "#CED314",
-    devicesNeeded: "1 master",
-    playersNeeded: "2+",
-    timeNeeded: "10-20 min",
-    onClick: () => window.open("https://vault.jamesonb.com/", "_blank"),
+    buttonText: "Coming Dec 2025",
   },
   {
     title: "Starstruck",
     description:
       "A social strategy game of cosmic survival! Stranded in deep space, you must navigate alliances, betrayals, and unpredictable events. Will you work with your crew or blindside them to be the last one standing? Trust no one in the void—only the strongest strategist survives.",
     color: "#00E932",
-    devicesNeeded: "1 master + 8 devices",
+    devicesNeeded: "1 master | 8 devices",
     playersNeeded: "8",
     timeNeeded: "2-3 hours",
     onClick: () => {
@@ -86,15 +97,17 @@ const pods = [
           </div>
         ),
         {
-          icon: <img src={starstruckIcon} alt="Starstruck" />,
+          icon: <img src={StarstruckIcon} alt="Starstruck" />,
           style: toastStyles,
         }
       )
     },
+    buttonText: "Coming Spring 2026",
   },
   {
     title: "Bictory!",
-    description: "Description of Bictory! goes here.",
+    description:
+      "A tactical duel of hidden ranks and battlefield strategy! Command your forces in a head-to-head clash where information is your greatest weapon. Bluff, deduce, and outmaneuver your opponent to capture their flag. Will you lead your army to glory?",
     color: "#FF6400",
     devicesNeeded: "2 devices",
     playersNeeded: "2",
@@ -108,17 +121,19 @@ const pods = [
           </div>
         ),
         {
-          icon: <img src={bictoryIcon} alt="Bictory!" />,
+          icon: <BictoryIcon />,
           style: toastStyles,
         }
       )
     },
+    buttonText: "Coming Soon",
   },
   {
     title: "Neon Airways",
-    description: "Description of Neon Airways goes here.",
+    description:
+      "Take to the skies as an airline tycoon! Build your global network across a shifting map of colorful regions. Trade assets, forge alliances, and manipulate the Sky Market Index. Adapt to the changing world and outmaneuver your rivals to become the ultimate ruler of the clouds.",
     color: "#4B6DE7",
-    devicesNeeded: "1 master + 3+ devices",
+    devicesNeeded: "1 master | 3+ devices",
     playersNeeded: "3+",
     timeNeeded: "1 hour",
     onClick: () =>
@@ -132,9 +147,10 @@ const pods = [
           </div>
         ),
         {
-          icon: <img src={neonAirwaysIcon} alt="Neon Airways" />,
+          icon: <NeonAirwaysIcon />,
           style: toastStyles,
         }
       ),
+    buttonText: "Coming Soon",
   },
 ]

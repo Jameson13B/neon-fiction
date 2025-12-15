@@ -45,6 +45,8 @@
 .infoItem {
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  align-items: center;
   gap: 4px;
   border: 0.5px solid;
   border-radius: 4px;

@@ -1,9 +1,4 @@
 import styles from "./pod.module.css"
-import PenguinIcon from "../assets/penguin.svg?react"
-import VaultIcon from "../assets/vault.svg?react"
-import StarstruckIcon from "../assets/alien.png"
-import BictoryIcon from "../assets/bictory.svg?react"
-import NeonAirwaysIcon from "../assets/airways.svg?react"
 
 export const Pod = ({
   title,
@@ -13,19 +8,13 @@ export const Pod = ({
   playersNeeded,
   timeNeeded,
   onClick,
+  buttonText,
+  Icon,
 }) => {
-  const Icon = {
-    "Penguin Paradise": PenguinIcon,
-    Vault: VaultIcon,
-    Starstruck: () => <img src={StarstruckIcon} alt="Starstruck" />,
-    "Bictory!": BictoryIcon,
-    "Neon Airways": NeonAirwaysIcon,
-  }
-  const IconComponent = Icon[title]
   return (
     <div className={styles.pod} style={{ borderColor: color, color }}>
       <div className={styles.hero} style={{ borderColor: color }}>
-        <IconComponent />
+        {Icon && <Icon />}
       </div>
 
       <h3 className={styles.title} style={{ borderColor: color }}>
@@ -50,10 +39,10 @@ export const Pod = ({
 
       <button
         className={styles.button}
-        onClick={onClick}
+        onClick={() => onClick(Icon)}
         style={{ background: color }}
       >
-        Play
+        {buttonText}
       </button>
     </div>
   )
