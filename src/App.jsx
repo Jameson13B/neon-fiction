@@ -9,6 +9,7 @@ import VaultIcon from "./assets/vault.svg?react"
 import StarstruckIcon from "./assets/alien.png"
 import BictoryIcon from "./assets/bictory.svg?react"
 import NeonAirwaysIcon from "./assets/airways.svg?react"
+import HipsterHeightsIcon from "./assets/hipster.png"
 
 const Icon = {
   "Penguin Paradise": PenguinIcon,
@@ -16,6 +17,9 @@ const Icon = {
   Starstruck: () => <img src={StarstruckIcon} alt="Starstruck" />,
   "Bictory!": BictoryIcon,
   "Neon Airways": NeonAirwaysIcon,
+  "Hipster Heights": () => (
+    <img src={HipsterHeightsIcon} alt="Hipster Heights" />
+  ),
 }
 
 function App() {
@@ -74,6 +78,33 @@ const pods = [
         ),
         {
           icon: <PenguinIcon />,
+          style: toastStyles,
+        }
+      )
+    },
+    buttonText: "Coming Dec 2025",
+  },
+  {
+    title: "Hipster Heights",
+    description:
+      "A fast-paced card game of urban evolution and ruthless real estate. Collect properties, charge rent, and gentrify neighborhoods with artisanal coffee shops and vintage boutiques. Steal sets, force deals, and become the ultimate developer in this satirical race to renovate the block.",
+    color: "#F036E6",
+    devicesNeeded: "1 master | 2+ devices",
+    playersNeeded: "2+",
+    timeNeeded: "15 min",
+    onClick: () => {
+      toast(
+        () => (
+          <div style={{ textAlign: "left" }}>
+            <strong>Coming soon!</strong>
+            <p>
+              Hipster Heights is getting some final touches. Beta version coming
+              soon!
+            </p>
+          </div>
+        ),
+        {
+          icon: <img src={HipsterHeightsIcon} alt="Hipster Heights" />,
           style: toastStyles,
         }
       )
