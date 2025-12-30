@@ -6,6 +6,7 @@ import logo from "./assets/logo.png"
 import styles from "./app.module.css"
 import PenguinIcon from "./assets/penguin.svg?react"
 import VaultIcon from "./assets/vault.svg?react"
+import FortunePaiGowIcon from "./assets/paigow.svg?react"
 import StarstruckIcon from "./assets/alien.png"
 import BictoryIcon from "./assets/bictory.svg?react"
 import NeonAirwaysIcon from "./assets/airways.svg?react"
@@ -14,6 +15,7 @@ import HipsterHeightsIcon from "./assets/hipster.png"
 const Icon = {
   "Penguin Paradise": PenguinIcon,
   Vault: VaultIcon,
+  "Fortune Pai Gow": FortunePaiGowIcon,
   Starstruck: () => <img src={StarstruckIcon} alt="Starstruck" />,
   "Bictory!": BictoryIcon,
   "Neon Airways": NeonAirwaysIcon,
@@ -61,6 +63,17 @@ const pods = [
     buttonText: "Play",
   },
   {
+    title: "Fortune Pai Gow",
+    description:
+      "Fortune Pai Gow Poker blends the ancient Chinese game of Pai Gow with classic poker action. The real thrill comes from the optional Fortune Bonus side bet, which pays out big based on your best seven-card poker ranking, adding exciting high-payout potential to this relaxed casino favorite.",
+    color: "#EE7631",
+    devicesNeeded: "1 master & 1+ devices",
+    playersNeeded: "1+",
+    timeNeeded: "30+ min",
+    onClick: () => window.open("https://paigow.neonfiction.games/", "_blank"),
+    buttonText: "Play Beta",
+  },
+  {
     title: "Penguin Paradise",
     description:
       "Penguin-fueled chaos on ice! Race to the finish line in this fast-paced party game. Set in the icy wonderland of Penguin Paradise, players must bet wisely, avoid going too fast, and be the first to the end. Grab you winter coat and get ready to race!",
@@ -73,7 +86,7 @@ const pods = [
         () => (
           <div style={{ textAlign: "left" }}>
             <strong>Coming soon!</strong>
-            <p>Penguin Paradise is finished and pending release.</p>
+            <p>Penguin Paradise is finished and pending beta release.</p>
           </div>
         ),
         {
@@ -82,14 +95,14 @@ const pods = [
         }
       )
     },
-    buttonText: "Coming Dec 2025",
+    buttonText: "Beta Coming Jan 1st",
   },
   {
     title: "Hipster Heights",
     description:
       "A fast-paced card game of urban evolution and ruthless real estate. Collect properties, charge rent, and gentrify neighborhoods with artisanal coffee shops and vintage boutiques. Steal sets, force deals, and become the ultimate developer in this satirical race to renovate the block.",
     color: "#F036E6",
-    devicesNeeded: "1 master | 2+ devices",
+    devicesNeeded: "1 master & 2+ devices",
     playersNeeded: "2+",
     timeNeeded: "15 min",
     onClick: () => {
@@ -109,14 +122,14 @@ const pods = [
         }
       )
     },
-    buttonText: "Coming Dec 2025",
+    buttonText: "Beta Coming Soon",
   },
   {
     title: "Starstruck",
     description:
       "A social strategy game of cosmic survival! Stranded in deep space, you must navigate alliances, betrayals, and unpredictable events. Will you work with your crew or blindside them to be the last one standing? Trust no one in the void—only the strongest strategist survives.",
     color: "#00E932",
-    devicesNeeded: "1 master | 8 devices",
+    devicesNeeded: "1 master & 8 devices",
     playersNeeded: "8",
     timeNeeded: "2-3 hours",
     onClick: () => {
@@ -157,14 +170,14 @@ const pods = [
         }
       )
     },
-    buttonText: "Coming Soon",
+    buttonText: "In Research and Design",
   },
   {
     title: "Neon Airways",
     description:
       "Take to the skies as an airline tycoon! Build your global network across a shifting map of colorful regions. Trade assets, forge alliances, and manipulate the Sky Market Index. Adapt to the changing world and outmaneuver your rivals to become the ultimate ruler of the clouds.",
     color: "#4B6DE7",
-    devicesNeeded: "1 master | 3+ devices",
+    devicesNeeded: "1 master & 3+ devices",
     playersNeeded: "3+",
     timeNeeded: "1 hour",
     onClick: () =>
@@ -182,6 +195,6 @@ const pods = [
           style: toastStyles,
         }
       ),
-    buttonText: "Coming Soon",
+    buttonText: "In Research and Design",
   },
 ]
