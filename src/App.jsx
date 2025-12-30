@@ -37,6 +37,9 @@ function App() {
       ))}
 
       <Footer />
+      <footer className={styles.footer}>
+        &copy; {new Date().getFullYear()} Neon Fiction Games
+      </footer>
       <Toaster position="bottom-center" reverseOrder={false} />
     </div>
   )

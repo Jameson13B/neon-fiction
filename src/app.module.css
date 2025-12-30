@@ -20,3 +20,12 @@
     0px 0px 8px 0px #27a8fda6, 0px 0px 9px 0px #27a8fd40,
     0px 0px 10px 0px #27a8fd26;
 }
+
+.footer {
+  margin-top: 1rem;
+  padding-top: 2rem;
+  border-top: 1px solid #222;
+  font-size: 0.875rem;
+  color: #555;
+  font-family: var(--font-display);
+}
