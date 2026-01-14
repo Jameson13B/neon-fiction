@@ -84,21 +84,8 @@ const pods = [
     devicesNeeded: "1 master",
     playersNeeded: "2+",
     timeNeeded: "30 min",
-    onClick: () => {
-      toast(
-        () => (
-          <div style={{ textAlign: "left" }}>
-            <strong>Coming soon!</strong>
-            <p>Penguin Paradise is finished and pending beta release.</p>
-          </div>
-        ),
-        {
-          icon: <PenguinIcon />,
-          style: toastStyles,
-        }
-      )
-    },
-    buttonText: "Beta Coming Jan 1st",
+    onClick: () => window.open("https://ppracing.neonfiction.games/", "_blank"),
+    buttonText: "Play Beta",
   },
   {
     title: "Hipster Heights",
