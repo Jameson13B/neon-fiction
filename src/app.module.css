@@ -5,6 +5,15 @@
   padding-bottom: 16px;
 }
 
+.podsContainer {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 48px;
+  justify-content: center;
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
 .logo {
   max-width: 250px;
   transform: scale(1.1);
@@ -16,9 +25,18 @@
   margin: 4px auto 0;
   height: 0;
   width: 100%;
-  box-shadow: 0px 0px 3px 0px #27a8fdfc, 0px 0px 6px 0px #27a8fde5,
-    0px 0px 8px 0px #27a8fda6, 0px 0px 9px 0px #27a8fd40,
+  box-shadow:
+    0px 0px 3px 0px #27a8fdfc,
+    0px 0px 6px 0px #27a8fde5,
+    0px 0px 8px 0px #27a8fda6,
+    0px 0px 9px 0px #27a8fd40,
     0px 0px 10px 0px #27a8fd26;
+}
+
+.neonHr {
+  width: 100%;
+  max-width: 800px;
+  margin: 32px auto;
 }
 
 .footer {

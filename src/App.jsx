@@ -4,6 +4,7 @@ import { Footer } from "./components/Footer"
 import { Pod } from "./components/Pod"
 import logo from "./assets/logo.png"
 import styles from "./app.module.css"
+import neonHr from "./assets/hr.svg"
 import PenguinIcon from "./assets/penguin.svg?react"
 import VaultIcon from "./assets/vault.svg?react"
 import FortunePaiGowIcon from "./assets/paigow.svg?react"
@@ -32,9 +33,23 @@ function App() {
         <div className={styles.horizontalLine} />
       </div>
 
-      {pods.map((pod) => (
-        <Pod key={pod.title} {...pod} Icon={Icon[pod.title]} />
-      ))}
+      <div className={styles.podsContainer}>
+        {pods
+          .filter((pod) => pod.status !== "coming soon")
+          .map((pod) => (
+            <Pod key={pod.title} {...pod} Icon={Icon[pod.title]} />
+          ))}
+      </div>
+
+      <img src={neonHr} alt="Neon Fiction" className={styles.neonHr} />
+
+      <div className={styles.podsContainer}>
+        {pods
+          .filter((pod) => pod.status === "coming soon")
+          .map((pod) => (
+            <Pod key={pod.title} {...pod} Icon={Icon[pod.title]} />
+          ))}
+      </div>
 
       <Footer />
       <footer className={styles.footer}>
@@ -63,7 +78,7 @@ const pods = [
     playersNeeded: "2+",
     timeNeeded: "10-20 min",
     onClick: () => window.open("https://vault.neonfiction.games/", "_blank"),
-    buttonText: "Play",
+    status: "live",
   },
   {
     title: "Fortune Pai Gow",
@@ -74,7 +89,7 @@ const pods = [
     playersNeeded: "1+",
     timeNeeded: "30+ min",
     onClick: () => window.open("https://paigow.neonfiction.games/", "_blank"),
-    buttonText: "Play Beta",
+    status: "beta",
   },
   {
     title: "Penguin Paradise",
@@ -85,7 +100,55 @@ const pods = [
     playersNeeded: "2+",
     timeNeeded: "30 min",
     onClick: () => window.open("https://ppracing.neonfiction.games/", "_blank"),
-    buttonText: "Play Beta",
+    status: "beta",
+  },
+  {
+    title: "Starstruck",
+    description:
+      "A social strategy game of cosmic survival! Stranded in deep space, you must navigate alliances, betrayals, and unpredictable events. Will you work with your crew or blindside them to be the last one standing? Trust no one in the void—only the strongest strategist survives.",
+    color: "#00E932",
+    devicesNeeded: "1 master & 8 devices",
+    playersNeeded: "8",
+    timeNeeded: "2-3 hours",
+    onClick: () => {
+      toast(
+        () => (
+          <div style={{ textAlign: "left" }}>
+            <strong>Coming soon!</strong>
+            <p>Starstruck is in active development.</p>
+          </div>
+        ),
+        {
+          icon: <img src={StarstruckIcon} alt="Starstruck" />,
+          style: toastStyles,
+        },
+      )
+    },
+    status: "coming soon",
+  },
+  {
+    title: "Bictory!",
+    description:
+      "A tactical duel of hidden ranks and battlefield strategy! Command your forces in a head-to-head clash where information is your greatest weapon. Bluff, deduce, and outmaneuver your opponent to capture their flag. Will you lead your army to glory?",
+    color: "#FF6400",
+    devicesNeeded: "2 devices",
+    playersNeeded: "2",
+    timeNeeded: "20-30 min",
+    onClick: () => {
+      toast(
+        () => (
+          <div style={{ textAlign: "left" }}>
+            <strong>Coming soon!</strong>
+            <p>Bictory! is in research and design.</p>
+          </div>
+        ),
+        {
+          icon: <BictoryIcon />,
+          style: toastStyles,
+        },
+      )
+    },
+    status: "coming soon",
   },
   {
     title: "Hipster Heights",
@@ -109,58 +172,10 @@ const pods = [
         {
           icon: <img src={HipsterHeightsIcon} alt="Hipster Heights" />,
           style: toastStyles,
-        }
+        },
       )
     },
-    buttonText: "Beta Coming Soon",
-  },
-  {
-    title: "Starstruck",
-    description:
-      "A social strategy game of cosmic survival! Stranded in deep space, you must navigate alliances, betrayals, and unpredictable events. Will you work with your crew or blindside them to be the last one standing? Trust no one in the void—only the strongest strategist survives.",
-    color: "#00E932",
-    devicesNeeded: "1 master & 8 devices",
-    playersNeeded: "8",
-    timeNeeded: "2-3 hours",
-    onClick: () => {
-      toast(
-        () => (
-          <div style={{ textAlign: "left" }}>
-            <strong>Coming soon!</strong>
-            <p>Starstruck is in active development.</p>
-          </div>
-        ),
-        {
-          icon: <img src={StarstruckIcon} alt="Starstruck" />,
-          style: toastStyles,
-        }
-      )
-    },
-    buttonText: "Coming Spring 2026",
-  },
-  {
-    title: "Bictory!",
-    description:
-      "A tactical duel of hidden ranks and battlefield strategy! Command your forces in a head-to-head clash where information is your greatest weapon. Bluff, deduce, and outmaneuver your opponent to capture their flag. Will you lead your army to glory?",
-    color: "#FF6400",
-    devicesNeeded: "2 devices",
-    playersNeeded: "2",
-    timeNeeded: "20-30 min",
-    onClick: () => {
-      toast(
-        () => (
-          <div style={{ textAlign: "left" }}>
-            <strong>Coming soon!</strong>
-            <p>Bictory! is in research and design.</p>
-          </div>
-        ),
-        {
-          icon: <BictoryIcon />,
-          style: toastStyles,
-        }
-      )
-    },
-    buttonText: "In Research and Design",
+    status: "coming soon",
   },
   {
     title: "Neon Airways",
@@ -183,8 +198,8 @@ const pods = [
         {
           icon: <NeonAirwaysIcon />,
           style: toastStyles,
-        }
+        },
       ),
-    buttonText: "In Research and Design",
+    status: "coming soon",
   },
 ]

@@ -5,6 +5,11 @@
   border-radius: 4px;
   text-align: left;
   position: relative;
+  max-width: 320px;
+  min-height: 560px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .hero {
@@ -21,6 +26,25 @@
   justify-content: center;
   height: 80px;
   width: 80px;
+}
+
+.statusBadge {
+  background-color: #0c0011;
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  padding: 8px;
+  border-radius: 4px;
+  font-size: 12px;
+  text-transform: uppercase;
+  max-width: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  border-width: 1px;
+  border-style: solid;
+  line-height: 135%;
 }
 
 .title {

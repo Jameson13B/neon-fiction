@@ -9,6 +9,7 @@ export const Pod = ({
   timeNeeded,
   onClick,
   buttonText,
+  status,
   Icon,
 }) => {
   return (
@@ -16,6 +17,15 @@ export const Pod = ({
       <div className={styles.hero} style={{ borderColor: color }}>
         {Icon && <Icon />}
       </div>
+
+      {status !== "live" && (
+        <div
+          className={styles.statusBadge}
+          style={{ color, borderColor: color }}
+        >
+          {status}
+        </div>
+      )}
 
       <h3 className={styles.title} style={{ borderColor: color }}>
         {title}
@@ -42,7 +52,7 @@ export const Pod = ({
         onClick={() => onClick(Icon)}
         style={{ background: color }}
       >
-        {buttonText}
+        Play
       </button>
     </div>
   )
