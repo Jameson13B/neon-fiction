@@ -8,7 +8,6 @@ export const Pod = ({
   playersNeeded,
   timeNeeded,
   onClick,
-  buttonText,
   status,
   Icon,
 }) => {
